@@ -37,4 +37,4 @@ For more info [read here](https://github.com/safu9/electron-icon-builder).
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](/LICENSE.md)
