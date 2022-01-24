@@ -12,6 +12,13 @@ export const GlobalStyle = createGlobalStyle`
     --color-main-copy: #555;
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-gradient-main: linear-gradient(315deg, #46393B 0%, #264449 74%);
+      --color-main-copy: #eee;
+    }
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -19,9 +26,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    height: 100vh;
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
-    color: #E1E1E6;
-    background-color: var(--background-gradient-main);
+    color: var(--color-main-copy);
+    background-color: var(--color-secondary);
+    background: var(--background-gradient-main);
   }
 `
