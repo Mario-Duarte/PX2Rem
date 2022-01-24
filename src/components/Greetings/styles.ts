@@ -10,7 +10,7 @@ const rotate = keyframes`
 `
 
 export const Container = styled.div`
-  height: 100vh;
+  height: 90vh;
   padding: 25px;
   display: flex;
   flex-direction: column;
