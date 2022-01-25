@@ -116,7 +116,7 @@ test('It converts px to pt', () => {
 })
 
 // test to check if it converts pt to rem
-test('It converts px to pt', () => {
+test('It converts pt to rem', () => {
     expect(ptToRem).toBe(1);
 })
 
