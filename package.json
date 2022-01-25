@@ -2,7 +2,7 @@
   "name": "px2rem",
   "author": "Mario Duarte",
   "version": "1.0.0",
-  "description": "Simple application to convert pixel values to rem, points and percentages.",
+  "description": "Simple application to convert pixel values to rem and percentages.",
   "main": "./.webpack/main/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -15,9 +15,11 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "polished": "^4.1.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hot-loader": "4.13.0",
+    "react-icons": "^4.3.1",
     "styled-components": "5.3.0"
   },
   "devDependencies": {

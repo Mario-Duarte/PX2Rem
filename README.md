@@ -1,6 +1,6 @@
 # PX2REM
 
-Simple application to convert pixel values to rem, points and percentages.
+Simple application to convert pixel values to rem and percentages.
 
 ## Installation
 
