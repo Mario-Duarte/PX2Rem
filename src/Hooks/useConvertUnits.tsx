@@ -1,4 +1,4 @@
-export type units = 'px' | '%' | 'rem';
+export type units = 'px' | '%' | 'rem' | 'pt';
 
 export interface convertUnitsProps {
     defaultSize: number;
@@ -23,5 +23,10 @@ export default function useConvertUnits({
     // Handle conversion between % and rem
     if ( sizeUnit === '%' && resultUnit === 'rem' ) return size / 100;
     if ( sizeUnit === 'rem' && resultUnit === '%' ) return size * 100;
+
+    // Handle conversion between pt, px, % and rem
+    if ( sizeUnit ==='px' && resultUnit === 'pt') return size * 72/96;
+    if (sizeUnit === 'pt' && resultUnit === 'px') return size * 96/72 ;
+    if (sizeUnit === 'pt' && resultUnit === 'rem') return size * 0.083333396325467; 
 
 }
