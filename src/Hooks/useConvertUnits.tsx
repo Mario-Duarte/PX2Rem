@@ -25,8 +25,8 @@ export default function useConvertUnits({
     if ( sizeUnit === 'rem' && resultUnit === '%' ) return size * 100;
 
     // Handle conversion between pt, px, % and rem
-    if ( sizeUnit ==='px' && resultUnit === 'pt') return size * 72/96;
-    if (sizeUnit === 'pt' && resultUnit === 'px') return size * 96/72 ;
-    if (sizeUnit === 'pt' && resultUnit === 'rem') return size * 0.083333396325467; 
+    if ( sizeUnit ==='px' && resultUnit === 'pt') return Math.round(size * 72/96);
+    if (sizeUnit === 'pt' && resultUnit === 'px') return Math.round(size * 96/72) ;
+    if (sizeUnit === 'pt' && resultUnit === 'rem') return Math.round(size * 0.083333396325467) ; 
 
 }
