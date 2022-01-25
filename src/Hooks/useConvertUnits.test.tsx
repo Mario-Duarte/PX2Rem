@@ -41,11 +41,33 @@ const remToPer = useConvertUnits({
     sizeUnit: 'rem',
     resultUnit: '%'
 });
+
 const perToPer = useConvertUnits({
     defaultSize: 16,
     size: 200,
     sizeUnit: '%',
     resultUnit: '%'
+});
+
+const pxToPt = useConvertUnits({
+    defaultSize: 16,
+    size: 16,
+    sizeUnit: 'px',
+    resultUnit: 'pt'
+});
+
+const ptToPx = useConvertUnits({
+    defaultSize: 16,
+    size: 12,
+    sizeUnit: 'pt',
+    resultUnit: 'px'
+});
+
+const ptToRem = useConvertUnits({
+    defaultSize: 16,
+    size: 12,
+    sizeUnit: 'pt',
+    resultUnit: 'rem'
 });
 
 // test to check if it converts Px to Rem
@@ -82,3 +104,19 @@ test('It converts px to rem', () => {
 test('It converts px to rem', () => {
     expect(perToPer).toBe(200);
 })
+
+// test to check if it converts px to pt
+test('It converts px to pt', () => {
+    expect(pxToPt).toBe(12);
+})
+
+// test to check if it converts pt to px
+test('It converts px to pt', () => {
+    expect(ptToPx).toBe(16);
+})
+
+// test to check if it converts pt to rem
+test('It converts px to pt', () => {
+    expect(ptToRem).toBe(1);
+})
+
