@@ -1,4 +1,4 @@
-import useConvertUnits, { units } from './useConvertUnits';
+import useConvertUnits from './useConvertUnits';
 
 const pxToRem = useConvertUnits({
     defaultSize: 12,
