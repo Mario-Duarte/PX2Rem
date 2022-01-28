@@ -12,9 +12,7 @@ export function SampleArea({fontSize}:SampleAreaProps) {
     return(
         <SampleAreaContainer>
             <Title>Sample text:</Title>
-            <TextArea fontSize={fontSize} rows={4}>
-                Lorem ipsum dolor sit amet
-            </TextArea>
+            <TextArea fontSize={fontSize} rows={4} defaultValue={'Lorem ipsum dolor sit amet'} />
         </SampleAreaContainer>
     );
 }
