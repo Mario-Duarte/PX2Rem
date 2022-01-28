@@ -10,8 +10,8 @@ export interface DefaultSizeInputProps{
 
 export function DefaultSizeInput({onChange}:DefaultSizeInputProps) {
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value:number = +e.target.value;
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        const value:number = +e.target.value; // the + will convert the input value from a string to a number
         onChange(value);
     }
 

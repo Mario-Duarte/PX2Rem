@@ -3,10 +3,13 @@ import { GlobalStyle } from './styles/GlobalStyle';
 import { Title } from './components/Title';
 import { SampleArea } from './components/SampleArea';
 import { DefaultSizeInput } from './components/DefaultSizeInput';
+import { DropDown } from './components/DropDown';
 import { Footer } from './components/Footer';
 import useConvertUnits, { units } from './Hooks/useConvertUnits';
 import { 
   StyledApp,
+  Row,
+  Col,
 } from './App.styles';
 
 export function App() {
@@ -45,14 +48,14 @@ export function App() {
       sizeUnit: convertUnit,
       resultUnit: resultUnit,
     });
-    const convertedRem = useConvertUnits({
+    const convertedPX = useConvertUnits({
       defaultSize: defaultSize,
       size: convertSize,
       sizeUnit: convertUnit,
-      resultUnit: 'rem',
+      resultUnit: 'px',
     });
     setResultSize(converted!);
-    setSampleSize(convertedRem!);
+    setSampleSize(convertedPX!);
   }, [defaultSize, convertSize, convertUnit, resultUnit]);
   
 
@@ -63,6 +66,14 @@ export function App() {
         <Title title='PX2REM' />
         <SampleArea fontSize={sampleSize} />
         <DefaultSizeInput onChange={handleChangeDefaultSize} />
+        <Row>
+          <Col>
+            <DropDown defaultValue={convertUnit} onChange={handleConvertUnit} />
+          </Col>
+          <Col>
+            <DropDown defaultValue={resultUnit} onChange={handleResultUnit} />
+          </Col>
+        </Row>
         <Footer />
       </StyledApp>
     </>
