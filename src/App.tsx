@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { Title } from './components/Title';
 import { SampleArea } from './components/SampleArea';
 import { DefaultSizeInput } from './components/DefaultSizeInput';
 import { DropDown } from './components/DropDown';
+import { InputSize } from './components/InputSize';
 import { Footer } from './components/Footer';
 import useConvertUnits, { units } from './Hooks/useConvertUnits';
 import { 
@@ -37,11 +38,7 @@ export function App() {
     setResultUnit(unit);
   }
 
-  const handleChangeDefaultSize = (size:number) => {
-    setDefaultSize(size);
-  }
-
-  useEffect(() => {
+  const converUnits = useMemo(() => {
     const converted =  useConvertUnits({
       defaultSize: defaultSize,
       size: convertSize,
@@ -55,9 +52,9 @@ export function App() {
       resultUnit: 'px',
     });
     setResultSize(converted!);
+    console.log(converted!);
     setSampleSize(convertedPX!);
-  }, [defaultSize, convertSize, convertUnit, resultUnit]);
-  
+  }, [defaultSize, convertSize, convertUnit, resultUnit]);  
 
   return (
     <>
@@ -65,9 +62,10 @@ export function App() {
       <StyledApp>
         <Title title='PX2REM' />
         <SampleArea fontSize={sampleSize} />
-        <DefaultSizeInput onChange={handleChangeDefaultSize} />
+        <DefaultSizeInput onChange={handleDefaultSize} />
         <Row>
           <Col>
+            <InputSize value={convertSize} onChange={handleConvertSize} />
             <DropDown defaultValue={convertUnit} onChange={handleConvertUnit} />
           </Col>
           <Col>
