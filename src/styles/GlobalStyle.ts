@@ -1,3 +1,4 @@
+import { transparentize } from 'polished';
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -7,15 +8,19 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --color-main: #7ee8fa;
     --color-secondary: #eec0c6;
-    --background-gradient-main: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+    --background-gradient-main: linear-gradient(315deg, #7ee8fa 0%, #eec0c6 74%);
     --color-tertiary: #C70E26;
     --color-main-copy: #555;
+    --box-bg-color: #fff;
+    --box-bg-color-transparent: ${transparentize(0.8, '#fff' )};
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background-gradient-main: linear-gradient(315deg, #46393B 0%, #264449 74%);
+      --background-gradient-main: linear-gradient(315deg, #264449 0%, #46393B 74%);
       --color-main-copy: #eee;
+      --box-bg-color: #333;
+      --box-bg-color-transparent: ${transparentize(0.8, '#333' )};
     }
   }
 
