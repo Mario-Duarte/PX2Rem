@@ -1,12 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { Title } from './components/Title';
 import { SampleArea } from './components/SampleArea';
+import { DefaultSizeInput } from './components/DefaultSizeInput';
 import { Footer } from './components/Footer';
-import { 
-  //useConvertUnits,
-  units,
-} from './Hooks/useConvertUnits';
+import useConvertUnits, { units } from './Hooks/useConvertUnits';
 import { 
   StyledApp,
 } from './App.styles';
@@ -36,12 +34,35 @@ export function App() {
     setResultUnit(unit);
   }
 
+  const handleChangeDefaultSize = (size:number) => {
+    setDefaultSize(size);
+  }
+
+  useEffect(() => {
+    const converted =  useConvertUnits({
+      defaultSize: defaultSize,
+      size: convertSize,
+      sizeUnit: convertUnit,
+      resultUnit: resultUnit,
+    });
+    const convertedRem = useConvertUnits({
+      defaultSize: defaultSize,
+      size: convertSize,
+      sizeUnit: convertUnit,
+      resultUnit: 'rem',
+    });
+    setResultSize(converted!);
+    setSampleSize(convertedRem!);
+  }, [defaultSize, convertSize, convertUnit, resultUnit]);
+  
+
   return (
     <>
       <GlobalStyle />
       <StyledApp>
         <Title title='PX2REM' />
         <SampleArea fontSize={sampleSize} />
+        <DefaultSizeInput onChange={handleChangeDefaultSize} />
         <Footer />
       </StyledApp>
     </>
