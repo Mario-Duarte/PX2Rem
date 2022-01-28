@@ -28,7 +28,7 @@ export const TextArea = styled.textarea<TextAreaProps>`
     width: 100%;
     max-height: 120px;
     margin-top: 10px;
-    font-size: ${p => p.fontSize}rem;
+    font-size: ${p => p.fontSize}px;
     color: var(--color-main-copy);
     overflow: scroll;
     resize: none;
