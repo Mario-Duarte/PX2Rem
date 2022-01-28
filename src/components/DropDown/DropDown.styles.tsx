@@ -13,6 +13,7 @@ export const StyledDropDown = styled.select`
     text-align: center;
     text-align-last: center;
     text-indent: 10px;
+    margin-top: 10px;
 
     &:focus {
         outline: none;
