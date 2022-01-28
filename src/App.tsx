@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { Title } from './components/Title';
+import { SampleArea } from './components/SampleArea';
 import { Footer } from './components/Footer';
 import { 
   //useConvertUnits,
@@ -17,6 +18,7 @@ export function App() {
   const [resultSize, setResultSize] = useState<number>(1);
   const [convertUnit, setConvertUnit] = useState<units>('px');
   const [resultUnit, setResultUnit] = useState<units>('rem');
+  const [sampleSize, setSampleSize] =useState<number>(1);
 
   const handleDefaultSize = (size:number) => {
     setDefaultSize(size);
@@ -39,6 +41,7 @@ export function App() {
       <GlobalStyle />
       <StyledApp>
         <Title title='PX2REM' />
+        <SampleArea fontSize={sampleSize} />
         <Footer />
       </StyledApp>
     </>

@@ -9,6 +9,7 @@ export const Container = styled.div`
     text-align: center;
     background-color: var(--color-secondary);
     color: #333;
+    font-weight: 300;
     p{
         font-size: 1rem;
         position: relative;
