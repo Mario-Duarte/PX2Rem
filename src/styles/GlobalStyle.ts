@@ -1,3 +1,4 @@
+import { transparentize } from 'polished';
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -11,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-tertiary: #C70E26;
     --color-main-copy: #555;
     --box-bg-color: #fff;
+    --box-bg-color-transparent: ${transparentize(0.8, '#fff' )};
   }
 
   @media (prefers-color-scheme: dark) {
@@ -18,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
       --background-gradient-main: linear-gradient(315deg, #264449 0%, #46393B 74%);
       --color-main-copy: #eee;
       --box-bg-color: #333;
+      --box-bg-color-transparent: ${transparentize(0.8, '#333' )};
     }
   }
 
