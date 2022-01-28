@@ -38,4 +38,10 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--color-secondary);
     background: var(--background-gradient-main);
   }
+
+  input,
+  textarea,
+  select {
+    font-family: 'Rubik', sans-serif;
+  }
 `
