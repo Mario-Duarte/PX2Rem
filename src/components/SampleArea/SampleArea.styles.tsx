@@ -26,7 +26,7 @@ export const TextArea = styled.textarea<TextAreaProps>`
     background: none;
     border: none;
     width: 100%;
-    max-height: 120px;
+    height: 120px;
     margin-top: 10px;
     font-size: ${p => p.fontSize}px;
     color: var(--color-main-copy);
