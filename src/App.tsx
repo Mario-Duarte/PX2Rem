@@ -5,6 +5,7 @@ import { SampleArea } from './components/SampleArea';
 import { DefaultSizeInput } from './components/DefaultSizeInput';
 import { DropDown } from './components/DropDown';
 import { InputSize } from './components/InputSize';
+import { ResultSize } from './components/ResultSize';
 import { Footer } from './components/Footer';
 import useConvertUnits, { units } from './Hooks/useConvertUnits';
 import { 
@@ -69,6 +70,7 @@ export function App() {
             <DropDown defaultValue={convertUnit} onChange={handleConvertUnit} />
           </Col>
           <Col>
+            <ResultSize result={resultSize} />
             <DropDown defaultValue={resultUnit} onChange={handleResultUnit} />
           </Col>
         </Row>
