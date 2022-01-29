@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ChildFocus } from '../../styles/SharedStyles';
 
 export const SampleAreaContainer = styled.div`
     position: relative;
@@ -9,6 +10,7 @@ export const SampleAreaContainer = styled.div`
     border-radius: 5px;
     padding: 10px;
     margin-top: 30px;
+    ${ChildFocus}
 `;
 
 export const Title = styled.p`

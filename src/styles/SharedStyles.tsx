@@ -1,4 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+export const ChildFocus = css`
+transition: box-shadow 0.4s ease-in-out;
+
+&:focus-within {
+    box-shadow: 0 0 1px 1px var(--color-focus);
+}
+`;
 
 export const InputContainer = styled.div`
     position: relative;
@@ -11,6 +19,7 @@ export const InputContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    ${ChildFocus}
 `;
 
 export const StyledInput = styled.input`
