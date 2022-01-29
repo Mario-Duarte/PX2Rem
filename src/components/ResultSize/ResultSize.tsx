@@ -2,7 +2,7 @@ import {
     InputContainer,
     StyledInput,
     Label
-} from './ResultSize.styles';
+} from '../../styles/SharedStyles';
 
 
 export interface ResultSizeProps {
