@@ -70,6 +70,37 @@ const ptToRem = useConvertUnits({
     resultUnit: 'rem'
 });
 
+const remToPt = useConvertUnits({
+    defaultSize: 16,
+    size: 16,
+    sizeUnit: 'rem',
+    resultUnit: 'pt'
+});
+const perToPt = useConvertUnits({
+    defaultSize: 16,
+    size: 16,
+    sizeUnit: '%',
+    resultUnit: 'pt'
+});
+const ptToPer = useConvertUnits({
+    defaultSize: 16,
+    size: 16,
+    sizeUnit: 'pt',
+    resultUnit: '%'
+});
+const perToPx = useConvertUnits({
+    defaultSize: 16,
+    size: 16,
+    sizeUnit: '%',
+    resultUnit: 'px'
+});
+const pxToPer = useConvertUnits({
+    defaultSize: 16,
+    size: 16,
+    sizeUnit: 'px',
+    resultUnit: '%'
+});
+
 // test to check if it converts Px to Rem
 test('It converts px to rem', () => {
     expect(pxToRem).toBe(2);
@@ -119,4 +150,30 @@ test('It converts px to pt', () => {
 test('It converts pt to rem', () => {
     expect(ptToRem).toBe(1);
 })
+
+// test to check if it converts rem to pt
+test('It converts pt to rem', () => {
+    expect(remToPt).toBe(192);
+})
+
+// test to check if it converts % to pt
+test('It converts pt to rem', () => {
+    expect(perToPt).toBe(1.92);
+})
+
+// test to check if it converts pt to %
+test('It converts pt to rem', () => {
+    expect(ptToPer).toBe(133.3333);
+})
+
+// test to check if it converts per to px
+test('It converts pt to rem', () => {
+    expect(perToPx).toBe(2.56);
+})
+
+// test to check if it converts px to %
+test('It converts pt to rem', () => {
+    expect(pxToPer).toBe(100);
+})
+
 
