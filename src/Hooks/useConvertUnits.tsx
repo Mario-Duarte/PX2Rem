@@ -29,8 +29,8 @@ export default function useConvertUnits({
     if (sizeUnit === 'pt' && resultUnit === 'px') return Math.round(((size * 96/72) + Number.EPSILON) * 1000 ) / 1000;  
 
     // Handle conversion between pt and rem 
-    if (sizeUnit === 'pt' && resultUnit === 'rem') return Math.round(((size * 0.083333396325467) + Number.EPSILON) * 1000 ) / 1000; 
-    if (sizeUnit === 'rem' && resultUnit === 'pt') return Math.round(((size / 0.083333396325467 ) + Number.EPSILON) * 1000 ) / 1000;
+    if (sizeUnit === 'pt' && resultUnit === 'rem') return Math.round(((size * (1.333333333333333/defaultSize)) + Number.EPSILON) * 1000 ) / 1000; 
+    if (sizeUnit === 'rem' && resultUnit === 'pt') return Math.round(((size / (1.333333333333333/defaultSize) ) + Number.EPSILON) * 1000 ) / 1000;
 
     // Handle conversion between % and pt, feito com ajuda do Brito
     if(sizeUnit === '%' && resultUnit === 'pt') return Math.round(((defaultSize * 72/96) * size / 100 + Number.EPSILON) * 1000 ) / 1000; 
