@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ChildFocus } from '../../styles/SharedStyles';
 
 export const DefaultSizeInputContainer = styled.div`
     position: relative;
@@ -28,6 +29,7 @@ export const Input = styled.input`
     font-size: 1rem;
     letter-spacing: -1.4;
     padding: 10px;
+    ${ChildFocus}
 
     &:focus {
         outline: none;

@@ -1,12 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { Title } from './components/Title';
 import { SampleArea } from './components/SampleArea';
 import { DefaultSizeInput } from './components/DefaultSizeInput';
+import { DropDown } from './components/DropDown';
+import { InputSize } from './components/InputSize';
+import { ResultSize } from './components/ResultSize';
 import { Footer } from './components/Footer';
 import useConvertUnits, { units } from './Hooks/useConvertUnits';
 import { 
   StyledApp,
+  Row,
+  Col,
 } from './App.styles';
 
 export function App() {
@@ -34,27 +39,23 @@ export function App() {
     setResultUnit(unit);
   }
 
-  const handleChangeDefaultSize = (size:number) => {
-    setDefaultSize(size);
-  }
-
-  useEffect(() => {
+  const converUnits = useMemo(() => {
     const converted =  useConvertUnits({
       defaultSize: defaultSize,
       size: convertSize,
       sizeUnit: convertUnit,
       resultUnit: resultUnit,
     });
-    const convertedRem = useConvertUnits({
+    const convertedPX = useConvertUnits({
       defaultSize: defaultSize,
       size: convertSize,
       sizeUnit: convertUnit,
-      resultUnit: 'rem',
+      resultUnit: 'px',
     });
     setResultSize(converted!);
-    setSampleSize(convertedRem!);
-  }, [defaultSize, convertSize, convertUnit, resultUnit]);
-  
+    console.log(converted!);
+    setSampleSize(convertedPX!);
+  }, [defaultSize, convertSize, convertUnit, resultUnit]);  
 
   return (
     <>
@@ -62,7 +63,17 @@ export function App() {
       <StyledApp>
         <Title title='PX2REM' />
         <SampleArea fontSize={sampleSize} />
-        <DefaultSizeInput onChange={handleChangeDefaultSize} />
+        <DefaultSizeInput onChange={handleDefaultSize} />
+        <Row>
+          <Col>
+            <InputSize value={convertSize} onChange={handleConvertSize} />
+            <DropDown defaultValue={convertUnit} onChange={handleConvertUnit} />
+          </Col>
+          <Col>
+            <ResultSize result={resultSize} />
+            <DropDown defaultValue={resultUnit} onChange={handleResultUnit} />
+          </Col>
+        </Row>
         <Footer />
       </StyledApp>
     </>

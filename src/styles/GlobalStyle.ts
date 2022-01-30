@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-secondary: #eec0c6;
     --background-gradient-main: linear-gradient(315deg, #7ee8fa 0%, #eec0c6 74%);
     --color-tertiary: #C70E26;
+    --color-focus: #0984e3;
     --color-main-copy: #555;
     --box-bg-color: #fff;
     --box-bg-color-transparent: ${transparentize(0.8, '#fff' )};
@@ -18,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   @media (prefers-color-scheme: dark) {
     :root {
       --background-gradient-main: linear-gradient(315deg, #264449 0%, #46393B 74%);
+      --color-focus: #ff7675;
       --color-main-copy: #eee;
       --box-bg-color: #333;
       --box-bg-color-transparent: ${transparentize(0.8, '#333' )};
@@ -37,5 +39,11 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--color-main-copy);
     background-color: var(--color-secondary);
     background: var(--background-gradient-main);
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: 'Rubik', sans-serif;
   }
 `

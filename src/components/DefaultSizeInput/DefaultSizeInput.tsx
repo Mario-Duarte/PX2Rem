@@ -10,8 +10,8 @@ export interface DefaultSizeInputProps{
 
 export function DefaultSizeInput({onChange}:DefaultSizeInputProps) {
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value:number = +e.target.value;
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        const value:number = parseInt(e.target.value); // Parse integer also ensure that there are no leading 0's
         onChange(value);
     }
 

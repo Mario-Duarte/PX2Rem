@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ChildFocus } from '../../styles/SharedStyles';
 
 export const SampleAreaContainer = styled.div`
     position: relative;
@@ -9,6 +10,7 @@ export const SampleAreaContainer = styled.div`
     border-radius: 5px;
     padding: 10px;
     margin-top: 30px;
+    ${ChildFocus}
 `;
 
 export const Title = styled.p`
@@ -26,9 +28,9 @@ export const TextArea = styled.textarea<TextAreaProps>`
     background: none;
     border: none;
     width: 100%;
-    max-height: 120px;
+    height: 120px;
     margin-top: 10px;
-    font-size: ${p => p.fontSize}rem;
+    font-size: ${p => p.fontSize}px;
     color: var(--color-main-copy);
     overflow: scroll;
     resize: none;
