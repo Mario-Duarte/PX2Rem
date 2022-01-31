@@ -39,7 +39,7 @@ export function App() {
     setResultUnit(unit);
   }
 
-  const converUnits = useMemo(() => {
+  useMemo(() => {
     const converted =  useConvertUnits({
       defaultSize: defaultSize,
       size: convertSize,
