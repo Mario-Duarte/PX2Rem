@@ -15,8 +15,8 @@ export function InputSize({
 }:InputSizeProps) {
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-        const size:number = parseInt(e.target.value); // Parse integer also ensure that there are no leading 0's
-        onChange(size);
+        const size:number = +e.target.value; // ensure that there are no leading 0's and that is of number type
+        onChange(size === 0 ? 1 : size);
     }
 
     return(
