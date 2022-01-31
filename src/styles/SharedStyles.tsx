@@ -37,6 +37,10 @@ export const StyledInput = styled.input`
     &:focus {
         outline: none;
     }
+
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
 `;
 
 export const Label = styled.label`
