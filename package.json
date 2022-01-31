@@ -70,7 +70,7 @@
       "packagerConfig": {
         "name": "PX2REM",
         "executableName": "PX2REM",
-        "icon": "assets/icons",
+        "icon": "assets/icons/mac/icon.icns",
         "extraResource": [
           "assets"
         ]
