@@ -32,8 +32,23 @@ export const TextArea = styled.textarea<TextAreaProps>`
     margin-top: 10px;
     font-size: ${p => p.fontSize}px;
     color: var(--color-main-copy);
-    overflow: scroll;
+    overflow-y: scroll;
     resize: none;
+
+    &::-webkit-scrollbar {
+        width: 12px;               /* width of the entire scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;        /* color of the tracking area */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color:var(--color-focus);    /* color of the scroll thumb */
+        border-radius: 20px;       /* roundness of the scroll thumb */
+        border: 3px solid transparent;  /* creates padding around scroll thumb */
+        cursor: pointer;
+    }
 
     &:focus {
         outline: none;
