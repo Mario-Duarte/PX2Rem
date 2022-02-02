@@ -1,7 +1,4 @@
-node_modules
-dist
-packages
-.webpack
-out
+node_modules/
+.cache/
+public
 .DS_Store
-.history

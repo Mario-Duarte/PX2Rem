@@ -1,1 +1,0 @@
-export { ResultSize } from './ResultSize';

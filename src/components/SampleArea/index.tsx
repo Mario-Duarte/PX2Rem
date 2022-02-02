@@ -1,1 +1,0 @@
-export { SampleArea } from './SampleArea';
