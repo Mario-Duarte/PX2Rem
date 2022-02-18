@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
       title: `PX2REM`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://mario-duarte.github.io/PX2Rem/`
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -12,5 +12,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-styled-components'
-  ]
+  ],
+  pathPrefix: "/your-repo-name",
 };
