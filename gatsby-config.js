@@ -13,5 +13,5 @@ module.exports = {
     },
     'gatsby-plugin-styled-components'
   ],
-  pathPrefix: "/your-repo-name",
+  pathPrefix: "/PX2Rem",
 };
