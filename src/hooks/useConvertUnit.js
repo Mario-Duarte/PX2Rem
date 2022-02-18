@@ -1,23 +1,9 @@
-export type units = 'px' | '%' | 'rem' | 'pt';
-
-export interface convertUnitsProps {
-    defaultSize: number;
-    size: number;
-    sizeUnit: units;
-    resultUnit: units;
-}
-
 export default function useConvertUnits({
     defaultSize,
     size,
     sizeUnit,
     resultUnit
 }) {
-
-    if ( typeof defaultSize !== Number 
-        && typeof size !== Number 
-        && typeof sizeUnit !== string 
-        && typeof resultUnit !== string ) return 0;
 
     if ( sizeUnit === resultUnit ) return size;
     
