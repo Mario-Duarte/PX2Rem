@@ -15,7 +15,7 @@ const IndexPage = () => {
     <Layout>
       <Header>
         <Logo />
-        <Buttons href={"https://google.com"} className="small" id="hello">
+        <Buttons href={"https://github.com/Mario-Duarte/PX2Rem/releases/"} className="small" id="hello">
           <>Download PX2REM</>
         </Buttons>
       </Header>
