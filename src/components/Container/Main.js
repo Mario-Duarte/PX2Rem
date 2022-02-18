@@ -12,6 +12,10 @@ export const Main = styled(Container)`
         padding: 80px 20px;
     }
 
+    ${p => p.theme.media.xl} {
+        min-height: calc(100vh - 220px);
+    }
+
     h1 {
         font-size: 3rem;
         letter-spacing: -0.25rem;
