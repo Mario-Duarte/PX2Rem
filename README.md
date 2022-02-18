@@ -1,5 +1,7 @@
 # PX2REM
 
+![PX2Rem](https://raw.githubusercontent.com/Mario-Duarte/PX2Rem/8460fe0727029b91a30bef5f29970a9b06d690a3/src/images/px2rem_social.png)
+
 Simple application to convert points, pixels, percentage and rem interchangeably with a simple and clean interface.
 
 This application was created to be a companion app to any developer to aid them on their daily tasks of converting high fidelity designs into working web sites, WPA or native apps.
