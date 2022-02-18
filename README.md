@@ -1,5 +1,7 @@
 # PX2REM
 
+![PX2Rem](https://raw.githubusercontent.com/Mario-Duarte/PX2Rem/8460fe0727029b91a30bef5f29970a9b06d690a3/src/images/px2rem_social.png)
+
 This Branch only contains the development of a SPA to be deployed to GitHub pages using the static site generator [Gatsby](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter).
 
 ## Development Installation
