@@ -8,6 +8,10 @@ export const Main = styled(Container)`
     color: ${p=>p.theme.colors.lightCopy};
     max-width: 960px;
 
+    ${p => p.theme.media.sm} {
+        padding: 80px 20px;
+    }
+
     h1 {
         font-size: 3rem;
         letter-spacing: -0.25rem;
