@@ -1,4 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { useConvertUnits } from "../../hooks/useConvertUnit";
+import { DefaultSize } from "../DefaultSize/DefaultSize";
+import { InputSize } from "../InputSize/InputSize";
+import { ResultSize } from "../ResultSize/ResultSize";
+import { Dropdown } from "../Dropdown/Dropdown";
+import { 
+    MainControls,
+    ControlContainer
+} from "./Calculator.styles";
 
 export function Calculator() {
 
@@ -7,52 +16,30 @@ export function Calculator() {
     const [resultUnit, setResultUnit] = useState('rem');
     const [defaultSize, setDefaultSize] = useState(16);
     const [resultSize, setResultSize] = useState(1);
+    const result = useConvertUnits(defaultSize, size, sizeUnit, resultUnit);
 
-    const handleChangeSize = (e) => {
-        setSize(e.value);
-    }
+    useEffect(()=>{
+        setResultSize(result);
+    },[result]);
 
-    const handleChangeSizeUnit = (e) => {
-        setSizeUnit(e.value);
-    }
-
-    const handleChangeResultUnit = (e) => {
-        setResultUnit(e.value);
-    }
-
-    const handleChangeDefaultSize = (e) => {
-        setDefaultSize(e.value);
-    }
+    const handleChangeSize = (val) => { setSize(val);}
+    const handleChangeSizeUnit = (val) => { setSizeUnit(val); }
+    const handleChangeResultUnit = (val) => { setResultUnit(val); }
+    const handleChangeDefaultSize = (val) => { console.log(val); setDefaultSize(val); }
 
     return(
         <>
-            <div className="mainControls">
-                <div className="input">
-                <input type="number" value={size} onChange={e=>handleChangeSize(e)} />
-                    <select defaultValue={sizeUnit}>
-                        <option value="rem">REM</option>
-                        <option value="px">PX</option>
-                        <option value="pt">PT</option>
-                        <option value="%">%</option>
-                    </select>
-                </div>
-                <div className="output">
-                    <input type="number" value={resultSize} />
-                    <select defaultValue={resultUnit}>
-                        <option value="rem">REM</option>
-                        <option value="px">PX</option>
-                        <option value="pt">PT</option>
-                        <option value="%">%</option>
-                    </select>
-                </div>
-            </div>
-            <div className="defaults">
-                <p>Browser default font-size</p>
-                <div>
-                    <input type="number" defaultValue={defaultSize} />
-                    <input type="text" value="PX" readOnly />
-                </div>
-            </div>
+            <MainControls>
+                <ControlContainer>
+                    <InputSize value={size} onChange={handleChangeSize} />
+                    <Dropdown defaultVal={sizeUnit} onChange={handleChangeSizeUnit} />
+                </ControlContainer>
+                <ControlContainer>
+                    <ResultSize result={resultSize} />
+                    <Dropdown defaultVal={resultUnit} onChange={handleChangeResultUnit} />
+                </ControlContainer>
+            </MainControls>
+            <DefaultSize onChange={handleChangeDefaultSize} />
         </>
     )
 }
