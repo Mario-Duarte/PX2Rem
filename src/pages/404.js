@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import { Header } from "../components/Header/Header"
-import { Logo } from "../components/Logo/Logo"
-import { Buttons } from "../components/Buttons/Buttons"
-import { Main } from "../components/Container/Main"
+import Layout from "./../components/layout"
+import { Header } from "./../components/Header/Header"
+import { Logo } from "./../components/Logo/Logo"
+import { Buttons } from "./../components/Buttons/Buttons"
+import { Main } from "./../components/Container/Main"
 
 
 const NotFoundPage = () => {

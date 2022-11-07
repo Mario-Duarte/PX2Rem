@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { useConvertUnits } from "../../hooks/useConvertUnit";
-import { DefaultSize } from "../DefaultSize/DefaultSize";
-import { InputSize } from "../InputSize/InputSize";
-import { ResultSize } from "../ResultSize/ResultSize";
-import { Dropdown } from "../Dropdown/Dropdown";
+import { useConvertUnits } from "./../../hooks/useConvertUnit";
+import { DefaultSize } from "./../DefaultSize/DefaultSize";
+import { InputSize } from "./../InputSize/InputSize";
+import { ResultSize } from "./../ResultSize/ResultSize";
+import { Dropdown } from "./../Dropdown/Dropdown";
 import { 
     MainControls,
     ControlContainer

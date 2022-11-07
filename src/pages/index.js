@@ -1,15 +1,15 @@
 import * as React from "react"
 import { Helmet } from "react-helmet"
-import Layout from "../components/layout"
-import { Header } from "../components/Header/Header"
-import { Logo } from "../components/Logo/Logo"
-import { Buttons } from "../components/Buttons/Buttons"
-import { Footer } from "../components/Footer/Footer"
+import Layout from "./../components/Layout"
+import { Header } from "./../components/Header/Header"
+import { Logo } from "./../components/Logo/Logo"
+import { Buttons } from "./../components/Buttons/Buttons"
+import { Footer } from "./../components/Footer/Footer"
 import {BsGithub} from "react-icons/bs"
 import { Main } from "../components/Container/Main"
-import { ButtonsContainer } from "../components/Container/ButtonsContainer"
-import { ProjectContainer } from "../components/Container/ProjectContainer"
-import { Calculator } from "../components/Calculator/Calculator"
+import { ButtonsContainer } from "./../components/Container/ButtonsContainer"
+import { ProjectContainer } from "./../components/Container/ProjectContainer"
+import { Calculator } from "./../components/Calculator/Calculator"
 
 
 const IndexPage = () => {

@@ -3,7 +3,7 @@ import {
     InputContainer,
     StyledInput,
     Label
-} from "../../theme/shared"
+} from "./../../theme/shared"
 
 export function InputSize({value, onChange}) {
 
