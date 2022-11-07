@@ -11,6 +11,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
+    "buildProd" : "gatsby build --prefix-paths && cp -R ./public/ ./docs/",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },

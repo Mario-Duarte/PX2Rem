@@ -30,6 +30,11 @@ To build the site use:
 yarn build
 ```
 
+To build the site and make changes public use:
+```bash
+buildProd
+```
+
 ## Contributors
 [Mario Duarte](https://github.com/Mario-Duarte) - Full stack developer </br>
 [Aleex Caires](https://github.com/AleexCaires) - Frontend developer
