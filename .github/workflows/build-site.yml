@@ -24,7 +24,7 @@ jobs:
         run: yarn
 
       - name: Build
-        run: yarn build
+        run: gatsby build --prefix-paths
 
       - name: Copy files
         uses: canastro/copy-file-action@master
