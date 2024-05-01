@@ -32,7 +32,7 @@ yarn build
 
 To build the site and make changes public use:
 ```bash
-buildProd
+yarn buildProd
 ```
 
 ## Contributors
